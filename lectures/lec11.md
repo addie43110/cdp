@@ -112,11 +112,19 @@ Idea: show how to use our `remote_chan`
 |**Function**|**Description**|
 |---|---|
 |`start_ping()`| establish a channel on which our ping server listens, register the channel under the name `"ping"`, then enter the `ping_loop()`|
-|`ping`| - lookup the ping channel, if it is running, continued below|
+
+
+`ping()`
+
+- lookup the ping channel, if it is running, continued below
 - create an answer chan,
 - then we will `write_chan` to the ping channel with the atom `ping` and the answer chan
   - don't forget to convert the answer channel to a remote channel
   - also change it to a string!
   - Frank solves this by writing a separate `serialize` function which automatically serializes any string passed to `write_chan`
-- then read the answer chan to see if a `pong` has come back to us|
-|`ping_loop`| recursively reads the ping channel and if there is a `ping` in there, read the answer channel and send a `pong` to the answer channel |
+- then read the answer chan to see if a `pong` has come back to us
+
+
+`ping_loop()`
+
+- recursively reads the ping channel and if there is a `ping` in there, read the answer channel and send a `pong` to the answer channel

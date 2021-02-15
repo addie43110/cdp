@@ -1,4 +1,4 @@
-# Lecture a
+# Lecture 25
 
 ## Transactions in a distributed setting
 - we have three nodes

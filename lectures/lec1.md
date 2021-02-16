@@ -66,7 +66,7 @@ class Time:
     self.lock = threading.Lock()
     self.lock.acquire()
     self.lock.release()
-    with self.lock():
+    with self.lock:
       ...
 
 def tick_n_times(time,n):

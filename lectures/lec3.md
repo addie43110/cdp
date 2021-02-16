@@ -35,13 +35,13 @@ Points:
 
 |**Function**|**Description**|
 |---|---|
-|`producer()`|simulates a produce which loops infinitely, sleeping and adding to the store|
+|`producer()`|simulates a producer which loops infinitely, sleeping and adding to the store|
 |`consumer()`|also loops infinitely, sleeping and consuming from the store. need to write `store[0:1] = []` to mutate the store-list|
 
 Points:
 - the consumer should check whether there is anything to consume
   - if we do this with a simple `while len(store)==0`, we both perform busy waiting and the check and taking from the store are not atomic, meaning we can run into critical errors
-  - instead, this should be done with a condition variable (`cond=threading.Condition()`
+  - instead, this should be done with a condition variable (`cond=threading.Condition()`)
 - condition variables wait until someone else releases the cond, then they must acquire the variable (only one will acquire it!)
   - `notify()` will wake all sleeping threads up, but they cannot do anything until the lock is released and available for taking.
 - **EXAM QUESTION:** why do we need to use a `while` loop when using Condition Variables???

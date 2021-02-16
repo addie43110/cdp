@@ -11,7 +11,7 @@
 ### `release()`
 - if a thread tries to release the lock and it is not the `holding_thread`, we should raise an error: `cannot release un-acquired lock`
 - otherwise, if the counter is 1:
-  - set `holding_thread` back to 1
+  - set `holding_thread` back to None
   - set counter to 0
   - release the lock
 - if the counter is not 1, simply decrease the counter

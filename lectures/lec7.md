@@ -16,7 +16,7 @@ Code for executing someting _n_ times:
 Sticks = lists:map(fun(_) -> new_stick() end, lists:seq(1,N)).
 ```
 
-- still run into deadlock when programming the dining hpilosophers progam in erlang
+- still run into deadlock when programming the dining philosophers progam in erlang
   - every philosopher sends the take message, then suspends on receive because they are all unvailable
 - to fix this, we can easily change the order of the 5th philosopher's sticks
   - alternatively, we can check if sticks are avaiable or not before we attempt to take them

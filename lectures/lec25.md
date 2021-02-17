@@ -46,7 +46,7 @@
 ### Are there problems with the above approach?
 - problems occur in distributed systems when nodes crash or connections are lost
   - this method is heavily dependent on the coordinator being available
-  - if the coordinator crashes, the rest f the nodes are lost
+  - if the coordinator crashes, the rest of the nodes are lost
 
 Consider if an agent crashes:
 

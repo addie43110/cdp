@@ -117,7 +117,7 @@ l :: Semaphore -> STM Int
 l sem = readTVar sem
 ```
 
-## Chan mplementtion in Haskell STM
+## Chan implementtion in Haskell STM
 - in our first implementation of Chan in Python, we had a bug with respect to `isEmpty` and `unGet`
 - does Haskell `Chan` also have this bug?
   - Haskell `Chan` uses MVar, so it would have this bug. But `isEmpty` and `unGet` are not provided by Haskell

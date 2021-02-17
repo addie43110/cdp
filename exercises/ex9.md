@@ -121,11 +121,11 @@ l sem = readTVar sem
 - in our first implementation of Chan in Python, we had a bug with respect to `isEmpty` and `unGet`
 - does Haskell `Chan` also have this bug?
   - Haskell `Chan` uses MVar, so it would have this bug. But `isEmpty` and `unGet` are not provided by Haskell
-- transfer the original Python implementation to Haskell STM (reuse the STM MVrs from the lecture)
+- transfer the original Python implementation to Haskell STM (reuse the STM MVars from the lecture)
   - does it still contain bugs for `isEmpty` and `unGet`? the answer is no! bugs are gone!
   - this lot of code is largely the same as the python implementation
   - however, we define a couple of data types:
-  - `data ChanEntry a = ChanEntry (MVr (a, ChanEntry ))`
+  - `data ChanEntry a = ChanEntry (MVar (a, ChanEntry ))`
   - `data Chan a = Chan (MVar (ChanEntry a)) (MVar (ChanEntry a))`
   - note here that a `Chan` is two MVars, one is the readHead and the other is the writeHead
   - each Chan entry is a tuple which contains a value and the link to the adjacent chan entry

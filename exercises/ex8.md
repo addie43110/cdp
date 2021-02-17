@@ -20,7 +20,7 @@
 - this explains it succinctly
   - "We use the mailbox to implement the stack. To realise `push` we just send messages to the stack process. But because the mailbox is a queue and not a stack, we need to go through the whole message box to realizse a `pop` returning the last message. To do this we send a message `top` to our self, to be able to recognize the end of the mailbox. We go through the whole mailbox sending ourselves ll the messages again if the `top` message isn't the next one. If the `top` messages followsa message, we return this message."
   - note that we therefore need to keep track of the last messge popped in this implementation
-  - initially the is set to a `blank`, so that if we immediately read `top`, we just return a `blank`
+  - initially this is set to a `blank`, so that if we immediately read `top`, we just return a `blank`
 
 ```erl
 stack(P) ->

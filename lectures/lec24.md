@@ -16,7 +16,7 @@ main = do
     return bal >= 0
 ```
 
-Assume invariants are always introduced with the direction combination of `atomically` and `always`.
+Assume invariants are always introduced with the direct combination of `atomically` and `always`.
 
 When should we check an invariant?
 - before another transaction commits (in the validation)

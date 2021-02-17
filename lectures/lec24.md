@@ -40,7 +40,7 @@ We will store every invariant within a global state, such that they can be check
   - some experiments show that putting back the locks if you don't get the next one can be much more efficient in independent concurrency
 - Haskell's type system avoids side effects within transactions; this is not guaranteed in our Erlang implementation
 
-## Transactions als occur in distributed settings
+## Transactions also occur in distributed settings
 - distributed data base (we will discuss distributed commit protocolls next lecture)
 - web applications assume transactions as well
 - consider a webserver (such as amazon)

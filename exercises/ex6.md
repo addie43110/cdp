@@ -32,7 +32,7 @@ Solution:
 - when we want to link to another channel, we begin a link process (which is basically the ping process)
   - we also need to notify the other channel that it should link to us
   - we send a boolean of `true` or `false` to the `link_chan` function
-  - that way we know whether we need to tell the other channel to link to us, or if we *are* the other channel andwe need to link to another channel
+  - that way we know whether we need to tell the other channel to link to us, or if we *are* the other channel and we need to link to another channel
 - the `link_chan` function either way spawns the `link_check` process, which connects to the other channel and sends a ping every 2 seconds, then closes the connection
   - that is, it keeps opening a new connection and socket every 2 seconds
 - if the connection is broken, it sends the message `exit` to the local chan

@@ -27,7 +27,7 @@ check({fn,N,Phi},Props) -> check(disj(Phi,x(fn(N-1,Phi))),Props);
 ```
 
 ## Verbose LTL tests
-- create a counter to show how often Finally and Globall are separated
+- create a counter to show how often Finally and Globally are separated
   - here, we just add a counter to the finally and globally tuples:
   - `f(Phi) -> f(0,Phi).`
   - `f(Cnt,Phi) -> {f,Cnt,Phi}.`

@@ -40,7 +40,7 @@ class Counter(threading.Thread):
   - following suit, all the rest of the philsophers are able to eat as well, back down to the first
 
 
-## Extensions for RLock clas
+## Extensions for RLock class
 - we implemented the RLock in python in class
 - in this exercise, we needed to add `locked()` and `tryAcquire()` to that implementation
 - for `locked()`, we used a regular lock in the implementation, so you could just return `self.lock.locked()` for that (seems like cheating to me)
